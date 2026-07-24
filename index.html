@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Appala Nagendra Varma — AI Engineer & Full Stack Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/devicon/2.17.0/devicon.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" type="image/png" href="favicon-heart.png">
+<link rel="icon" type="image/x-icon" href="favicon-heart.ico">
+</head>
+<body>
+  <div class="cursor-ring" id="cursorRing"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+  <canvas id="bg-canvas"></canvas>
+  <div class="backdrop"><div class="mesh"></div><div class="aurora"></div><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
+  <div class="grid-floor"></div>
+  <div class="noise"></div>
+
+  <nav>
+    <div class="logo"><div class="logo-mark"><img src="logo.png" alt="Nagendra Logo" /></div>NAGENDRA</div>
+    <ul class="nav-links">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#certificates">Certificates</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="icon-btn" id="themeToggle" aria-label="Toggle theme"><svg data-lucide="moon" width="16" height="16"></svg></button>
+      <button class="talk-btn"><span class="dot"></span> Let's Talk</button>
+    </div>
+  </nav>
+
+  <div class="scroll-track"></div>
+<div class="scroll-progress" id="scrollProgress"></div><header class="hero" id="home">
+    <div class="hero-left">
+      <div class="planet planet-1"></div>
+    <div class="planet planet-2"></div>
+    <div class="planet planet-3"></div>
+      <p class="greeting"><span class="wave"></span> Hi, I'm</p>
+      <h1 class="name">Appala <span>Nagendra Varma</span></h1>
+      <div class="typed-line"><span id="typedText"></span><span class="cursor-blink">&nbsp;</span></div>
+<p class="hero-desc">Computer Science Engineering graduate specializing in <b>Artificial Intelligence</b>, <b>Machine Learning</b>, and modern software development. Passionate about building scalable, intelligent solutions that combine innovation, data-driven insights, and creative problem-solving.</p>
+      <div class="cta-row">
+<a href="assets/resume/Nagendra_Varma_Resume_SE.pdf" target="_blank" class="btn btn-primary">View Resume <svg data-lucide="file-text"></svg></a>        <a href="#projects" class="btn btn-ghost">View Projects <svg data-lucide="arrow-right"></svg></a>
+      </div>
+      <div class="social-row">
+       <a class="icon-btn" href="https://github.com/Nagendra14319" aria-label="GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.09 3.29 9.4 7.86 10.93.57.1.79-.25.79-.55 0-.27-.01-1.16-.02-2.11-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.69 1.25 3.34.96.1-.75.4-1.25.73-1.54-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.18-3.09-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11.05 11.05 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.24 2.75.12 3.04.74.8 1.18 1.83 1.18 3.09 0 4.43-2.7 5.4-5.27 5.69.42.36.78 1.07.78 2.17 0 1.56-.02 2.82-.02 3.2 0 .31.21.66.8.55A11.5 11.5 0 0 0 23.5 12c0-6.27-5.23-11.5-11.5-11.5Z"/></svg></a>
+        <a class="icon-btn" href="https://www.linkedin.com/in/appala-nagendra-varma-25bbb9318" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg></a>
+        <a class="icon-btn" href="mailto:nagendravarma1315@gmail.com" aria-label="Email"><svg data-lucide="mail" width="18" height="18"></svg></a>
+      </div>
+      <div class="scroll-indicator"><div class="mouse-ico"><span></span></div> Scroll Down</div>
+    </div>
+    <div class="hero-right">
+      <div class="orbit-wrap" id="orbitWrap">
+        <div class="ring r1"></div><div class="ring r2"></div>
+        <div class="ring-dot d1"></div><div class="ring-dot d2"></div><div class="ring-dot d3"></div>
+        <div class="ring-glass"></div>
+        <div id="iconRing"></div>
+        <div class="avatar-frame" id="avatarFrame">
+          <div class="avatar-glow-ring"></div>
+          <img src="assets/images/profile.png" alt="Nagendra Varma" class="avatar-photo"/>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="stats-bar">
+    <div class="stat stat-reveal" style="--i:0"><div class="stat-icon"><svg data-lucide="code-2"></svg></div><div><h3 data-count="15" data-suffix="+">0+</h3><p>Projects Completed</p></div></div>
+    <div class="stat stat-reveal" style="--i:1"><div class="stat-icon"><svg data-lucide="briefcase"></svg></div><div><h3 data-count="3" data-suffix="">0</h3><p>Internships</p></div></div>
+    <div class="stat stat-reveal" style="--i:2"><div class="stat-icon"><svg data-lucide="trophy"></svg></div><div><h3 data-count="15" data-suffix="+">0+</h3><p>Certifications Earned</p></div></div>
+    <div class="stat stat-reveal" style="--i:3"><div class="stat-icon"><svg data-lucide="star"></svg></div><div><h3 data-count="7" data-suffix="">0</h3><p>Hackathon Winner</p></div></div>
+    <div class="stat stat-reveal" style="--i:4"><div class="stat-icon"><svg data-lucide="users"></svg></div><div><h3 data-count="456" data-suffix="+">0+</h3><p>Problems Solved</p></div></div>
+    <div class="stat stat-reveal" style="--i:5"><div class="stat-icon"><svg data-lucide="calendar"></svg></div><div><h3 data-count="6" data-suffix="+">0+</h3><p>Years Learning</p></div></div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="section-head about-head-left reveal">
+      <div class="section-label">&bull; ABOUT ME &bull;</div>
+      <h2>Get to know <span>me</span></h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-visual reveal">
+        <div class="identity-stats-grid">
+          <div class="dev-identity-card">
+            <div class="dev-card-glow"></div>
+            <div class="dev-icon-badge"><svg data-lucide="code-2"></svg></div>
+            <h3 class="dev-gradient-text">Data Analyst &amp; Full Stack Developer</h3>
+            <p class="dev-subtitle">Building scalable AI-powered applications with modern technologies.</p>
+            <div class="availability-pill"><span class="pulse-dot"></span> Available for Internships &amp; Full-Time Roles</div>
+            <div class="dev-chip-row">
+              <span class="dev-chip">Python</span>
+              <span class="dev-chip">JavaScript</span>
+              <span class="dev-chip">React</span>
+              <span class="dev-chip">FastAPI</span>
+              <span class="dev-chip">Node.js</span>
+              <span class="dev-chip">Gemini AI</span>
+              <span class="dev-chip">MongoDB</span>
+              <span class="dev-chip">SQL</span>
+            </div>
+          </div>
+          <div class="mini-stats-grid">
+            <button class="mini-stat-card" data-target="#projects" type="button">
+              <div class="mini-stat-icon">🚀</div>
+              <h4 class="mini-stat-num" data-count="15">0+</h4>
+              <p>Projects Completed</p>
+            </button>
+            <button class="mini-stat-card" data-target="#certificates" type="button">
+              <div class="mini-stat-icon">🏆</div>
+              <h4 class="mini-stat-num" data-count="15">0+</h4>
+              <p>Certifications</p>
+            </button>
+            <button class="mini-stat-card" data-target="#experience" type="button">
+              <div class="mini-stat-icon">💼</div>
+              <h4 class="mini-stat-num" data-count="5">0</h4>
+              <p>Internships</p>
+            </button>
+            <button class="mini-stat-card" data-target="#skills" type="button">
+              <div class="mini-stat-icon">⚡</div>
+              <h4 class="mini-stat-num" data-count="10">0+</h4>
+              <p>Technologies Used</p>
+            </button>
+            <a class="mini-stat-card" href="https://wa.me/918885519886" target="_blank" rel="noopener">
+              <div class="mini-stat-icon">🟢</div>
+              <h4 class="mini-stat-static-title">Freelance</h4>
+              <p>Available for work</p>
+            </a>
+            <div class="mini-stat-card">
+              <div class="mini-stat-icon">🎓</div>
+              <h4 class="mini-stat-static-title">B.Tech CSE</h4>
+              <p>2022 – 2026</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="education">
+    <div class="edu-header reveal">
+      <div class="edu-subtitle">&bull; MY JOURNEY &bull;</div>
+      <h2 class="edu-title">Education</h2>
+      <div class="edu-line-divider"><span class="edu-line-dot"></span></div>
+    </div>
+
+    <div class="edu-timeline reveal">
+      <div class="edu-timeline-line"></div>
+
+      <div class="edu-item">
+        <div class="edu-icon-wrap">
+          <svg class="edu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/></svg>
+        </div>
+        <div class="edu-card">
+          <h3 class="edu-degree">Bachelor of Technology</h3>
+          <p class="edu-field">Computer Science &amp; Engineering</p>
+          <p class="edu-college">Swarnandhra College of Engineering &amp; Technology</p>
+          <p class="edu-location">Narsapur, India</p>
+          <p class="edu-years">2022 – 2026</p>
+          <span class="edu-badge">CGPA: 8.10</span>
+        </div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-icon-wrap">
+          <svg class="edu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 4h7a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2Z"/><path d="M22 4h-7a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h8Z"/></svg>
+        </div>
+        <div class="edu-card">
+          <h3 class="edu-degree">Intermediate</h3>
+          <p class="edu-field">Computer Science</p>
+          <p class="edu-college">SVKP &amp; PV Junior College</p>
+          <p class="edu-years">2020 – 2022</p>
+          <span class="edu-badge">GPA: 9.33</span>
+        </div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-icon-wrap">
+          <svg class="edu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18"/><path d="M5 21V9l7-5 7 5v12"/><path d="M9 21v-6h6v6"/></svg>
+        </div>
+        <div class="edu-card">
+          <h3 class="edu-degree">Secondary School Certificate</h3>
+          <p class="edu-college">Bhashyam High School</p>
+          <p class="edu-years">2019 – 2020</p>
+          <span class="edu-badge">GPA: 9.95</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section skills-carousel-section" id="skills">
+    <div class="section-head reveal">
+      <div class="section-label">&bull; TECH STACK &bull;</div>
+      <h2>Technologies <span>I Work With</span></h2>
+    </div>
+    <div class="tech-interactive" id="techInteractive">
+      <div class="skills-carousel" id="techCarousel">
+        <div class="skills-track" id="techTrack">
+          <div class="skill-tile"><div class="tile-icon-box" style="background:rgba(55,118,171,.18)"><i class="devicon-python-plain colored"></i></div><span>Python</span></div>
+          <div class="skill-tile"><div class="tile-icon-box" style="background:rgba(16,185,129,.18)"><svg data-lucide="zap" style="color:#10b981;width:32px;height:32px;"></svg></div><span>FastAPI</span></div>
+          <div class="skill-tile"><div class="tile-icon-box" style="background:rgba(34,211,238,.18)"><i class="devicon-react-original colored"></i></div><span>React</span></div>
+<div class="skill-tile"><div class="tile-icon-box" style="background:rgba(255,255,255,.08)"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/nextdotjs.svg" width="32" height="32" alt="Next.js" style="display:block;filter:brightness(0) invert(1);"/></div><span>Next.js</span></div><div class="skill-tile"><div class="tile-icon-box" style="background:rgba(71,162,72,.18)"><i class="devicon-mongodb-plain colored"></i></div><span>MongoDB</span></div><div class="skill-tile"><div class="tile-icon-box" style="background:rgba(43,108,176,.18)"><i class="devicon-mysql-plain colored"></i></div><span>MySQL</span></div>          <div class="skill-tile"><div class="tile-icon-box" style="background:rgba(240,80,50,.18)"><i class="devicon-git-plain colored"></i></div><span>Git</span></div>
+          <div class="skill-tile"><div class="tile-icon-box" style="background:rgba(36,150,237,.18)"><i class="devicon-docker-plain colored"></i></div><span>Docker</span></div>
+          <div class="skill-tile"><div class="tile-icon-box" style="background:rgba(255,153,0,.18)"><svg data-lucide="cloud" style="color:#fb923c;width:32px;height:32px;"></svg></div><span>AWS</span></div>
+          <div class="skill-tile"><div class="tile-icon-box" style="background:rgba(56,189,248,.18)"><i class="devicon-tailwindcss-plain colored"></i></div><span>Tailwind</span></div><div class="skill-tile"><div class="tile-icon-box" style="background:rgba(255,255,255,.1)"><svg width="32" height="32" viewBox="0 0 24 24" fill="#fff"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.09 3.29 9.4 7.86 10.93.57.1.79-.25.79-.55 0-.27-.01-1.16-.02-2.11-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.69 1.25 3.34.96.1-.75.4-1.25.73-1.54-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.18-3.09-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11.05 11.05 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.24 2.75.12 3.04.74.8 1.18 1.83 1.18 3.09 0 4.43-2.7 5.4-5.27 5.69.42.36.78 1.07.78 2.17 0 1.56-.02 2.82-.02 3.2 0 .31.21.66.8.55A11.5 11.5 0 0 0 23.5 12c0-6.27-5.23-11.5-11.5-11.5Z"/></svg></div><span>GitHub</span></div>
+          <div class="skill-tile"><div class="tile-icon-box" style="background:rgba(55,118,171,.18)"><i class="devicon-python-plain colored"></i></div><span>Python</span></div>
+          <div class="skill-tile"><div class="tile-icon-box" style="background:rgba(16,185,129,.18)"><svg data-lucide="zap" style="color:#10b981;width:32px;height:32px;"></svg></div><span>FastAPI</span></div>
+          <div class="skill-tile"><div class="tile-icon-box" style="background:rgba(34,211,238,.18)"><i class="devicon-react-original colored"></i></div><span>React</span></div>
+<div class="skill-tile"><div class="tile-icon-box" style="background:rgba(255,255,255,.08)"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/nextdotjs.svg" width="32" height="32" alt="Next.js" style="display:block;filter:brightness(0) invert(1);"/></div><span>Next.js</span></div>          <div class="skill-tile"><div class="tile-icon-box" style="background:rgba(255,111,0,.18)"><i class="devicon-tensorflow-original colored"></i></div><span>TensorFlow</span></div>
+<div class="skill-tile"><div class="tile-icon-box" style="background:rgba(255,255,255,.08)"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/nextdotjs.svg" width="32" height="32" alt="Next.js" style="display:block;filter:brightness(0) invert(1);"/></div><span>Next.js</span></div><div class="skill-tile"><div class="tile-icon-box" style="background:rgba(71,162,72,.18)"><i class="devicon-mongodb-plain colored"></i></div><span>MongoDB</span></div><div class="skill-tile"><div class="tile-icon-box" style="background:rgba(43,108,176,.18)"><i class="devicon-mysql-plain colored"></i></div><span>MySQL</span></div>          <div class="skill-tile"><div class="tile-icon-box" style="background:rgba(36,150,237,.18)"><i class="devicon-docker-plain colored"></i></div><span>Docker</span></div>
+          <div class="skill-tile"><div class="tile-icon-box" style="background:rgba(255,153,0,.18)"><svg data-lucide="cloud" style="color:#fb923c;width:32px;height:32px;"></svg></div><span>AWS</span></div>
+          <div class="skill-tile"><div class="tile-icon-box" style="background:rgba(56,189,248,.18)"><i class="devicon-tailwindcss-plain colored"></i></div><span>Tailwind</span></div><div class="skill-tile"><div class="tile-icon-box" style="background:rgba(255,255,255,.1)"><svg width="32" height="32" viewBox="0 0 24 24" fill="#fff"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.09 3.29 9.4 7.86 10.93.57.1.79-.25.79-.55 0-.27-.01-1.16-.02-2.11-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.69 1.25 3.34.96.1-.75.4-1.25.73-1.54-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.18-3.09-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11.05 11.05 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.24 2.75.12 3.04.74.8 1.18 1.83 1.18 3.09 0 4.43-2.7 5.4-5.27 5.69.42.36.78 1.07.78 2.17 0 1.56-.02 2.82-.02 3.2 0 .31.21.66.8.55A11.5 11.5 0 0 0 23.5 12c0-6.27-5.23-11.5-11.5-11.5Z"/></svg></div><span>GitHub</span></div>
+        </div>
+      </div>
+      <div class="tech-grid-expand" id="techGridExpand">
+        <div class="tech-grid-tile"><div class="tile-icon-box" style="background:rgba(55,118,171,.18)"><i class="devicon-python-plain colored"></i></div><span>Python</span></div>
+        <div class="tech-grid-tile"><div class="tile-icon-box" style="background:rgba(16,185,129,.18)"><svg data-lucide="zap" style="color:#10b981;width:32px;height:32px;"></svg></div><span>FastAPI</span></div>
+        <div class="tech-grid-tile"><div class="tile-icon-box" style="background:rgba(34,211,238,.18)"><i class="devicon-react-original colored"></i></div><span>React</span></div>
+<div class="tech-grid-tile"><div class="tile-icon-box" style="background:rgba(255,255,255,.08)"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/nextdotjs.svg" width="32" height="32" alt="Next.js" style="display:block;filter:brightness(0) invert(1);"/></div><span>Next.js</span></div><div class="tech-grid-tile"><div class="tile-icon-box" style="background:rgba(71,162,72,.18)"><i class="devicon-mongodb-plain colored"></i></div><span>MongoDB</span></div><div class="tech-grid-tile"><div class="tile-icon-box" style="background:rgba(43,108,176,.18)"><i class="devicon-mysql-plain colored"></i></div><span>MySQL</span></div>        <div class="tech-grid-tile"><div class="tile-icon-box" style="background:rgba(255,111,0,.18)"><i class="devicon-tensorflow-original colored"></i></div><span>TensorFlow</span></div>
+        <div class="tech-grid-tile"><div class="tile-icon-box" style="background:rgba(240,80,50,.18)"><i class="devicon-git-plain colored"></i></div><span>Git</span></div>
+        <div class="tech-grid-tile"><div class="tile-icon-box" style="background:rgba(36,150,237,.18)"><i class="devicon-docker-plain colored"></i></div><span>Docker</span></div>
+        <div class="tech-grid-tile"><div class="tile-icon-box" style="background:rgba(255,153,0,.18)"><svg data-lucide="cloud" style="color:#fb923c;width:32px;height:32px;"></svg></div><span>AWS</span></div>
+        <div class="tech-grid-tile"><div class="tile-icon-box" style="background:rgba(56,189,248,.18)"><i class="devicon-tailwindcss-plain colored"></i></div><span>Tailwind</span></div><div class="tech-grid-tile"><div class="tile-icon-box" style="background:rgba(255,255,255,.1)"><svg width="32" height="32" viewBox="0 0 24 24" fill="#fff"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.09 3.29 9.4 7.86 10.93.57.1.79-.25.79-.55 0-.27-.01-1.16-.02-2.11-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.69 1.25 3.34.96.1-.75.4-1.25.73-1.54-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.18-3.09-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11.05 11.05 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.24 2.75.12 3.04.74.8 1.18 1.83 1.18 3.09 0 4.43-2.7 5.4-5.27 5.69.42.36.78 1.07.78 2.17 0 1.56-.02 2.82-.02 3.2 0 .31.21.66.8.55A11.5 11.5 0 0 0 23.5 12c0-6.27-5.23-11.5-11.5-11.5Z"/></svg></div><span>GitHub</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section pw-section" id="projects">
+    <div class="pw-bg-decor" aria-hidden="true"></div>
+   <div class="pw-header reveal">
+      <div class="pw-header-text">
+        <div class="pw-label">&bull; FEATURED WORK &bull;</div>
+        <h2 class="pw-title">Selected <span>Projects</span></h2>
+      </div>
+      <div class="pw-subtitle-row">
+        <p class="pw-subtitle">A closer look at things I've designed, built and shipped.</p>
+      </div>
+    </div>
+
+    <div class="pw-showcase reveal" id="pwShowcase">
+      <div class="pw-sidebar-wrap" id="pwSidebarWrap">
+        <div class="pw-counter" id="pwCounter"></div>
+        <button class="pw-nav-btn pw-nav-up" id="pwNavUp" type="button" aria-label="Previous project">
+          <svg data-lucide="chevron-up"></svg>
+        </button>
+        <nav class="pw-sidebar" id="pwSidebar" role="tablist" aria-label="Projects list"></nav>
+        <button class="pw-nav-btn pw-nav-down" id="pwNavDown" type="button" aria-label="Next project">
+          <svg data-lucide="chevron-down"></svg>
+        </button>
+      </div>
+
+      <div class="pw-preview">
+        <div class="pw-frame" id="pwFrame">
+          <div class="pw-frame-bar"><span></span><span></span><span></span></div>
+          <div class="pw-frame-visual" id="pwFrameVisual"></div>
+        </div>
+      </div>
+
+      <div class="pw-details">  
+        <div class="pw-details-inner" id="pwDetails"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="experience">
+    <div class="section-top-row reveal">
+      <div><div class="section-label">&bull; EXPERIENCE &bull;</div><h2>My <span>Internship Experience</span></h2></div>
+  
+    </div>
+    <div class="exp-timeline">
+      <div class="exp-timeline-line"></div>
+      <div class="exp-timeline-item reveal">
+        <div class="exp-timeline-dot"></div>
+        <div class="glass-card exp-tl-card">
+          <div class="exp-top"><div class="exp-logo"><img src="assets/images/nivuna-labs-logo.png" alt="Nivuna Labs" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><span class="exp-logo-fallback" style="display:none;">N</span></div><div><h3>Nivuna Labs</h3><span class="exp-org">Generative AI Intern</span></div></div>
+          <span class="exp-date">Sep 2025 – Mar 2026</span>
+          <p>Built ML models and worked on real-world AI applications.</p>
+          <div class="exp-tags"><i class="devicon-python-plain colored"></i><i class="devicon-tensorflow-original colored"></i></div>
+        </div>
+      </div>
+      <div class="exp-timeline-item reveal">
+        <div class="exp-timeline-dot"></div>
+        <div class="glass-card exp-tl-card">
+          <div class="exp-top"><div class="exp-logo"><img src="assets/images/inlighnx-logo.png" alt="InLighnX" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><span class="exp-logo-fallback" style="display:none;">I</span></div><div><h3>InLighnX Global Pvt Lmt</h3><span class="exp-org">Web Development Intern</span></div></div>
+          <span class="exp-date">Oct 2023 – Nov 2023</span>
+          <p>Developed responsive web apps and collaborated with a team.</p>
+          <div class="exp-tags"><i class="devicon-react-original colored"></i><i class="devicon-nodejs-plain colored"></i></div>
+        </div>
+      </div>
+      <div class="exp-timeline-item reveal">
+        <div class="exp-timeline-dot"></div>
+        <div class="glass-card exp-tl-card">
+          <div class="exp-top"><div class="exp-logo"><img src="assets/images/codtech-logo.png" alt="CodTech" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><span class="exp-logo-fallback" style="display:none;">C</span></div><div><h3>CodTech</h3><span class="exp-org">Python Developer Intern</span></div></div>
+          <span class="exp-date">Aug 2023 – Sep 2023</span>
+          <p>Worked on Python projects and automation scripts.</p>
+          <div class="exp-tags"><i class="devicon-python-plain colored"></i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="achievements">
+    <div class="ac-grid">
+      <div class="reveal">
+        <div class="section-label">&bull; ACHIEVEMENTS &bull;</div>
+        <h2 style="font-family:var(--font-display);font-weight:700;font-size:clamp(24px,2.6vw,32px);margin-bottom:22px;">My <span style="background:linear-gradient(90deg,var(--blue),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent;">Achievements</span></h2>
+        <div class="ac-list">
+<div class="glass-card"><div class="ac-icon"><svg data-lucide="trophy"></svg></div><div><h4>State-Level AIML Hackathon Winner</h4><p>Secured 1st Place in a State-Level AI & Machine Learning Hackathon.</p></div></div>          <div class="glass-card"><div class="ac-icon"><svg data-lucide="heart-handshake"></svg></div><div><h4>NSS Volunteer</h4><p>Actively participated in NSS activities and social service.</p></div></div>
+          <div class="glass-card"><div class="ac-icon"><svg data-lucide="trophy"></svg></div><div><h4>Smart India Hackathon 2024</h4><p>Participated in Smart India Hackathon 2024.</p></div></div>
+          <div class="glass-card"><div class="ac-icon"><svg data-lucide="eye-off"></svg></div><div><h4>Blind Coding Club Member</h4><p>Part of Blind Coding Club — building by heart, not by sight.</p></div></div>
+          <div class="glass-card"><div class="ac-icon"><svg data-lucide="crown"></svg></div><div><h4>Chess Player</h4><p>Passionate chess player and problem solver.</p></div></div>
+        </div>
+      </div>
+      <div id="certificates" class="reveal" style="text-align:center">
+        <div class="section-label">CERTIFICATIONS</div>
+        <h2 style="font-family:var(--font-display);font-weight:700;font-size:clamp(24px,2.6vw,32px);margin-bottom:22px;">My <span style="background:linear-gradient(90deg,var(--blue),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent;">Certifications</span></h2>
+
+        <button class="view-all cert-view-all-btn" id="certViewAllBtn" type="button" style="margin:0 auto 22px;">View All Certifications <svg data-lucide="grid-3x3"></svg></button>
+
+        <div class="cert-coverflow" id="certCoverflow">
+          <button class="cert-arrow cert-arrow-left" id="certPrev" aria-label="Previous certificate"><svg data-lucide="chevron-left"></svg></button>
+          <div class="cert-coverflow-stage" id="certStage">
+            <div class="cert-coverflow-card" data-index="0">
+              <div class="cert-card-inner glass-card cert-card2">
+                <span class="cert-verified"><svg data-lucide="badge-check"></svg></span>
+                <div class="cert-preview"><img src="assets/images/certificates/01-python-programming.png" alt="Python Programming certificate" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><svg data-lucide="award" style="display:none;"></svg></div>
+                <div class="cert-info"><h4>Python Programming</h4><p>Infosys Springboard &bull; 2023</p></div>
+              </div>
+            </div>
+            <div class="cert-coverflow-card" data-index="1">
+              <div class="cert-card-inner glass-card cert-card2">
+                <span class="cert-verified"><svg data-lucide="badge-check"></svg></span>
+                <div class="cert-preview"><img src="assets/images/certificates/02-ethical-hacking.png" alt="Ethical Hacking certificate" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><svg data-lucide="award" style="display:none;"></svg></div>
+                <div class="cert-info"><h4>Ethical Hacking</h4><p>Eduskills Academy &bull; 2025</p></div>
+              </div>
+            </div>
+            <div class="cert-coverflow-card" data-index="2">
+              <div class="cert-card-inner glass-card cert-card2">
+                <span class="cert-verified"><svg data-lucide="badge-check"></svg></span>
+                <div class="cert-preview"><img src="assets/images/certificates/03-data-structures.png" alt="Data Structures certificate" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><svg data-lucide="award" style="display:none;"></svg></div>
+                <div class="cert-info"><h4>Data Structures</h4><p>Great Learning &bull; 2025</p></div>
+              </div>
+            </div>
+            <div class="cert-coverflow-card" data-index="3">
+              <div class="cert-card-inner glass-card cert-card2">
+                <span class="cert-verified"><svg data-lucide="badge-check"></svg></span>
+                <div class="cert-preview"><img src="assets/images/certificates/04-fundamentals-of-cybersecurity.png" alt="Fundamentals Of Cybersecurity certificate" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><svg data-lucide="award" style="display:none;"></svg></div>
+                <div class="cert-info"><h4>Fundamentals of Cybersecurity</h4><p>Zscaler &bull; 2025</p></div>
+              </div>
+            </div>
+            <div class="cert-coverflow-card" data-index="4">
+              <div class="cert-card-inner glass-card cert-card2">
+                <span class="cert-verified"><svg data-lucide="badge-check"></svg></span>
+                <div class="cert-preview"><img src="assets/images/certificates/05-frontend-web-development.png" alt="Frontend Web Development certificate" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><svg data-lucide="award" style="display:none;"></svg></div>
+                <div class="cert-info"><h4>Frontend Web Development</h4><p>CodTech &bull; 2025</p></div>
+              </div>
+            </div>
+            <div class="cert-coverflow-card" data-index="5">
+              <div class="cert-card-inner glass-card cert-card2">
+                <span class="cert-verified"><svg data-lucide="badge-check"></svg></span>
+                <div class="cert-preview"><img src="assets/images/certificates/06-introduction-to-networks.png" alt="Introduction To Networks certificate" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><svg data-lucide="award" style="display:none;"></svg></div>
+                <div class="cert-info"><h4>Introduction to Networks</h4><p>Cisco Networking Academy &bull; 2025</p></div>
+              </div>
+            </div>
+            <div class="cert-coverflow-card" data-index="6">
+              <div class="cert-card-inner glass-card cert-card2">
+                <span class="cert-verified"><svg data-lucide="badge-check"></svg></span>
+                <div class="cert-preview"><img src="assets/images/certificates/07-full-stack-developer.png" alt="Full Stack Developer certificate" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><svg data-lucide="award" style="display:none;"></svg></div>
+                <div class="cert-info"><h4>Full Stack Developer</h4><p>GrowthLink &bull; 2025</p></div>
+              </div>
+            </div>
+            <div class="cert-coverflow-card" data-index="8">
+              <div class="cert-card-inner glass-card cert-card2">
+                <span class="cert-verified"><svg data-lucide="badge-check"></svg></span>
+                <div class="cert-preview"><img src="assets/images/certificates/09-introduction-to-generative-ai.png" alt="Introduction To Generative Ai certificate" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><svg data-lucide="award" style="display:none;"></svg></div>
+                <div class="cert-info"><h4>Introduction to Generative AI</h4><p>IBM &bull; 2025</p></div>
+              </div>
+            </div>
+            <div class="cert-coverflow-card" data-index="9">
+              <div class="cert-card-inner glass-card cert-card2">
+                <span class="cert-verified"><svg data-lucide="badge-check"></svg></span>
+                <div class="cert-preview"><img src="assets/images/certificates/10-solutions-architecture-job-simulation.png" alt="Solutions Architecture Job Simulation certificate" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><svg data-lucide="award" style="display:none;"></svg></div>
+                <div class="cert-info"><h4>Solutions Architecture Job Simulation</h4><p>Amazon Web Services (AWS) &bull; 2025</p></div>
+              </div>
+            </div>
+            <div class="cert-coverflow-card" data-index="10">
+              <div class="cert-card-inner glass-card cert-card2">
+                <span class="cert-verified"><svg data-lucide="badge-check"></svg></span>
+                <div class="cert-preview"><img src="assets/images/certificates/11-frontend-development-internship.png" alt="Frontend Development Internship certificate" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><svg data-lucide="award" style="display:none;"></svg></div>
+                <div class="cert-info"><h4>Frontend Development Internship</h4><p>InLighnX Global Pvt. Ltd. &bull; 2025</p></div>
+              </div>
+            </div>
+            <div class="cert-coverflow-card" data-index="11">
+              <div class="cert-card-inner glass-card cert-card2">
+                <span class="cert-verified"><svg data-lucide="badge-check"></svg></span>
+                <div class="cert-preview"><img src="assets/images/certificates/12-generative-ai-with-ibm-cloud.png" alt="Generative Ai With Ibm Cloud certificate" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><svg data-lucide="award" style="display:none;"></svg></div>
+                <div class="cert-info"><h4>Generative AI with IBM Cloud</h4><p>SmartBridge &bull; 2025</p></div>
+              </div>
+            </div>
+            <div class="cert-coverflow-card" data-index="12">
+              <div class="cert-card-inner glass-card cert-card2">
+                <span class="cert-verified"><svg data-lucide="badge-check"></svg></span>
+                <div class="cert-preview"><img src="assets/images/certificates/13-introduction-to-cybersecurity.png" alt="Introduction To Cybersecurity certificate" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><svg data-lucide="award" style="display:none;"></svg></div>
+                <div class="cert-info"><h4>Introduction to Cybersecurity</h4><p>Cisco Networking Academy &bull; 2025</p></div>
+              </div>
+            </div>
+            <div class="cert-coverflow-card" data-index="13">
+              <div class="cert-card-inner glass-card cert-card2">
+                <span class="cert-verified"><svg data-lucide="badge-check"></svg></span>
+                <div class="cert-preview"><img src="assets/images/certificates/14-sql-and-relational-databases-101.png" alt="Sql And Relational Databases 101 certificate" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><svg data-lucide="award" style="display:none;"></svg></div>
+                <div class="cert-info"><h4>SQL and Relational Databases 101</h4><p>IBM Skills Network &bull; 2026</p></div>
+              </div>
+            </div>
+            <div class="cert-coverflow-card" data-index="14">
+              <div class="cert-card-inner glass-card cert-card2">
+                <span class="cert-verified"><svg data-lucide="badge-check"></svg></span>
+                <div class="cert-preview"><img src="assets/images/certificates/15-data-analytics-job-simulation.png" alt="Data Analytics Job Simulation certificate" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><svg data-lucide="award" style="display:none;"></svg></div>
+                <div class="cert-info"><h4>Data Analytics Job Simulation</h4><p>Deloitte &bull; 2026</p></div>
+              </div>
+            </div>
+            <div class="cert-coverflow-card" data-index="15">
+              <div class="cert-card-inner glass-card cert-card2">
+                <span class="cert-verified"><svg data-lucide="badge-check"></svg></span>
+                <div class="cert-preview"><img src="assets/images/certificates/16-introduction-to-generative-ai-studio.png" alt="Introduction To Generative Ai Studio certificate" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><svg data-lucide="award" style="display:none;"></svg></div>
+                <div class="cert-info"><h4>Introduction to Generative AI Studio</h4><p>Simplilearn &bull; 2026</p></div>
+              </div>
+            </div>
+            <div class="cert-coverflow-card" data-index="16">
+              <div class="cert-card-inner glass-card cert-card2">
+                <span class="cert-verified"><svg data-lucide="badge-check"></svg></span>
+                <div class="cert-preview"><img src="assets/images/certificates/17-introduction-to-ms-excel.png" alt="Introduction To Ms Excel certificate" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><svg data-lucide="award" style="display:none;"></svg></div>
+                <div class="cert-info"><h4>Introduction to MS Excel</h4><p>Simplilearn &bull; 2026</p></div>
+              </div>
+            </div>
+          </div>
+          <button class="cert-arrow cert-arrow-right" id="certNext" aria-label="Next certificate"><svg data-lucide="chevron-right"></svg></button>
+        </div>
+
+        <div class="certs-grid2" id="certsGridAll">
+          <div class="glass-card cert-card2" data-title="Python Programming" data-sub="Infosys Springboard • 2023">
+            <span class="cert-verified"><svg data-lucide="badge-check"></svg></span>
+            <div class="cert-preview"><img src="assets/images/certificates/01-python-programming.png" alt="Python Programming certificate" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><svg data-lucide="award" style="display:none;"></svg></div>
+            <div class="cert-info"><h4>Python Programming</h4><p>Infosys Springboard &bull; 2023</p></div>
+          </div>
+          <div class="glass-card cert-card2" data-title="Ethical Hacking" data-sub="Eduskills Academy • 2025">
+            <span class="cert-verified"><svg data-lucide="badge-check"></svg></span>
+            <div class="cert-preview"><img src="assets/images/certificates/02-ethical-hacking.png" alt="Ethical Hacking certificate" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><svg data-lucide="award" style="display:none;"></svg></div>
+            <div class="cert-info"><h4>Ethical Hacking</h4><p>Eduskills Academy &bull; 2025</p></div>
+          </div>
+          <div class="glass-card cert-card2" data-title="Data Structures" data-sub="Great Learning • 2025">
+            <span class="cert-verified"><svg data-lucide="badge-check"></svg></span>
+            <div class="cert-preview"><img src="assets/images/certificates/03-data-structures.png" alt="Data Structures certificate" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><svg data-lucide="award" style="display:none;"></svg></div>
+            <div class="cert-info"><h4>Data Structures</h4><p>Great Learning &bull; 2025</p></div>
+          </div>
+          <div class="glass-card cert-card2" data-title="Fundamentals of Cybersecurity" data-sub="Zscaler • 2025">
+            <span class="cert-verified"><svg data-lucide="badge-check"></svg></span>
+            <div class="cert-preview"><img src="assets/images/certificates/04-fundamentals-of-cybersecurity.png" alt="Fundamentals Of Cybersecurity certificate" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><svg data-lucide="award" style="display:none;"></svg></div>
+            <div class="cert-info"><h4>Fundamentals of Cybersecurity</h4><p>Zscaler &bull; 2025</p></div>
+          </div>
+          <div class="glass-card cert-card2" data-title="Frontend Web Development" data-sub="CodTech • 2025">
+            <span class="cert-verified"><svg data-lucide="badge-check"></svg></span>
+            <div class="cert-preview"><img src="assets/images/certificates/05-frontend-web-development.png" alt="Frontend Web Development certificate" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><svg data-lucide="award" style="display:none;"></svg></div>
+            <div class="cert-info"><h4>Frontend Web Development</h4><p>CodTech &bull; 2025</p></div>
+          </div>
+          <div class="glass-card cert-card2" data-title="Introduction to Networks" data-sub="Cisco Networking Academy • 2025">
+            <span class="cert-verified"><svg data-lucide="badge-check"></svg></span>
+            <div class="cert-preview"><img src="assets/images/certificates/06-introduction-to-networks.png" alt="Introduction To Networks certificate" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><svg data-lucide="award" style="display:none;"></svg></div>
+            <div class="cert-info"><h4>Introduction to Networks</h4><p>Cisco Networking Academy &bull; 2025</p></div>
+          </div>
+          <div class="glass-card cert-card2" data-title="Full Stack Developer" data-sub="GrowthLink • 2025">
+            <span class="cert-verified"><svg data-lucide="badge-check"></svg></span>
+            <div class="cert-preview"><img src="assets/images/certificates/07-full-stack-developer.png" alt="Full Stack Developer certificate" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><svg data-lucide="award" style="display:none;"></svg></div>
+            <div class="cert-info"><h4>Full Stack Developer</h4><p>GrowthLink &bull; 2025</p></div>
+          </div>
+          <div class="glass-card cert-card2" data-title="Introduction to Generative AI" data-sub="IBM • 2025">
+            <span class="cert-verified"><svg data-lucide="badge-check"></svg></span>
+            <div class="cert-preview"><img src="assets/images/certificates/09-introduction-to-generative-ai.png" alt="Introduction To Generative Ai certificate" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><svg data-lucide="award" style="display:none;"></svg></div>
+            <div class="cert-info"><h4>Introduction to Generative AI</h4><p>IBM &bull; 2025</p></div>
+          </div>
+          <div class="glass-card cert-card2" data-title="Solutions Architecture Job Simulation" data-sub="Amazon Web Services (AWS) • 2025">
+            <span class="cert-verified"><svg data-lucide="badge-check"></svg></span>
+            <div class="cert-preview"><img src="assets/images/certificates/10-solutions-architecture-job-simulation.png" alt="Solutions Architecture Job Simulation certificate" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><svg data-lucide="award" style="display:none;"></svg></div>
+            <div class="cert-info"><h4>Solutions Architecture Job Simulation</h4><p>Amazon Web Services (AWS) &bull; 2025</p></div>
+          </div>
+          <div class="glass-card cert-card2" data-title="Frontend Development Internship" data-sub="InLighnX Global Pvt. Ltd. • 2025">
+            <span class="cert-verified"><svg data-lucide="badge-check"></svg></span>
+            <div class="cert-preview"><img src="assets/images/certificates/11-frontend-development-internship.png" alt="Frontend Development Internship certificate" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><svg data-lucide="award" style="display:none;"></svg></div>
+            <div class="cert-info"><h4>Frontend Development Internship</h4><p>InLighnX Global Pvt. Ltd. &bull; 2025</p></div>
+          </div>
+          <div class="glass-card cert-card2" data-title="Generative AI with IBM Cloud" data-sub="SmartBridge • 2025">
+            <span class="cert-verified"><svg data-lucide="badge-check"></svg></span>
+            <div class="cert-preview"><img src="assets/images/certificates/12-generative-ai-with-ibm-cloud.png" alt="Generative Ai With Ibm Cloud certificate" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><svg data-lucide="award" style="display:none;"></svg></div>
+            <div class="cert-info"><h4>Generative AI with IBM Cloud</h4><p>SmartBridge &bull; 2025</p></div>
+          </div>
+          <div class="glass-card cert-card2" data-title="Introduction to Cybersecurity" data-sub="Cisco Networking Academy • 2025">
+            <span class="cert-verified"><svg data-lucide="badge-check"></svg></span>
+            <div class="cert-preview"><img src="assets/images/certificates/13-introduction-to-cybersecurity.png" alt="Introduction To Cybersecurity certificate" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><svg data-lucide="award" style="display:none;"></svg></div>
+            <div class="cert-info"><h4>Introduction to Cybersecurity</h4><p>Cisco Networking Academy &bull; 2025</p></div>
+          </div>
+          <div class="glass-card cert-card2" data-title="SQL and Relational Databases 101" data-sub="IBM Skills Network • 2026">
+            <span class="cert-verified"><svg data-lucide="badge-check"></svg></span>
+            <div class="cert-preview"><img src="assets/images/certificates/14-sql-and-relational-databases-101.png" alt="Sql And Relational Databases 101 certificate" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><svg data-lucide="award" style="display:none;"></svg></div>
+            <div class="cert-info"><h4>SQL and Relational Databases 101</h4><p>IBM Skills Network &bull; 2026</p></div>
+          </div>
+          <div class="glass-card cert-card2" data-title="Data Analytics Job Simulation" data-sub="Deloitte • 2026">
+            <span class="cert-verified"><svg data-lucide="badge-check"></svg></span>
+            <div class="cert-preview"><img src="assets/images/certificates/15-data-analytics-job-simulation.png" alt="Data Analytics Job Simulation certificate" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><svg data-lucide="award" style="display:none;"></svg></div>
+            <div class="cert-info"><h4>Data Analytics Job Simulation</h4><p>Deloitte &bull; 2026</p></div>
+          </div>
+          <div class="glass-card cert-card2" data-title="Introduction to Generative AI Studio" data-sub="Simplilearn • 2026">
+            <span class="cert-verified"><svg data-lucide="badge-check"></svg></span>
+            <div class="cert-preview"><img src="assets/images/certificates/16-introduction-to-generative-ai-studio.png" alt="Introduction To Generative Ai Studio certificate" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><svg data-lucide="award" style="display:none;"></svg></div>
+            <div class="cert-info"><h4>Introduction to Generative AI Studio</h4><p>Simplilearn &bull; 2026</p></div>
+          </div>
+          <div class="glass-card cert-card2" data-title="Introduction to MS Excel" data-sub="Simplilearn • 2026">
+            <span class="cert-verified"><svg data-lucide="badge-check"></svg></span>
+            <div class="cert-preview"><img src="assets/images/certificates/17-introduction-to-ms-excel.png" alt="Introduction To Ms Excel certificate" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><svg data-lucide="award" style="display:none;"></svg></div>
+            <div class="cert-info"><h4>Introduction to MS Excel</h4><p>Simplilearn &bull; 2026</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="section-head reveal">
+      <div class="section-label">&bull; CONTACT &bull;</div>
+      <h2>Get In <span>Touch</span></h2>
+    </div>
+    <div class="contact-grid2">
+      <div class="glass-card contact-info-card2 reveal">
+        <p>Have a project in mind or want to collaborate? Feel free to reach out to me!</p>
+        <a class="contact-line" href="mailto:nagendravarma1315@gmail.com"><div class="c-icon"><svg data-lucide="mail"></svg></div>nagendravarma1315@gmail.com</a>
+        <a class="contact-line" href="tel:+918885519886"><div class="c-icon"><svg data-lucide="phone"></svg></div>+91 8885519886</a>
+        <div class="contact-line"><div class="c-icon"><svg data-lucide="map-pin"></svg></div>India, Andhra Pradesh</div>
+      </div>
+<form class="glass-card contact-form2 reveal" id="contactForm" action="https://formspree.io/f/xjgqqnyb" method="POST">        <div class="field-row">
+          <div class="field"><input type="text" name="name" placeholder=" " required id="cf-name"><label>Your Name</label></div>
+          <div class="field"><input type="email" name="email" placeholder=" " required id="cf-email"><label>Your Email</label></div>
+        </div>
+        <div class="field"><input type="text" name="subject" placeholder=" " required id="cf-subject"><label>Subject</label></div>
+        <div class="field"><textarea name="message" placeholder=" " required id="cf-msg"></textarea><label>Your Message</label></div>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Send Message <svg data-lucide="arrow-right"></svg></button>
+        <div class="form-success" id="formSuccess"><svg data-lucide="circle-check-big" width="16" height="16"></svg> Message sent — thanks for reaching out!</div>
+        <div class="form-error" id="formError">Something went wrong — please try again or email me directly.</div>
+      </form>
+      <div class="glass-card connect-card reveal">
+        <h3>Let's Connect</h3>
+        <p>Find me on these platforms</p>
+        <a class="connect-btn" href="https://github.com/Nagendra14319"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.09 3.29 9.4 7.86 10.93.57.1.79-.25.79-.55 0-.27-.01-1.16-.02-2.11-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.69 1.25 3.34.96.1-.75.4-1.25.73-1.54-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.18-3.09-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11.05 11.05 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.24 2.75.12 3.04.74.8 1.18 1.83 1.18 3.09 0 4.43-2.7 5.4-5.27 5.69.42.36.78 1.07.78 2.17 0 1.56-.02 2.82-.02 3.2 0 .31.21.66.8.55A11.5 11.5 0 0 0 23.5 12c0-6.27-5.23-11.5-11.5-11.5Z"/></svg> GitHub</a>
+        <a class="connect-btn" href="https://www.linkedin.com/in/appala-nagendra-varma-25bbb9318"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg> LinkedIn</a>
+        <a class="connect-btn" href="https://www.instagram.com/?hl=en"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.65-.07-4.85s.02-3.58.07-4.85c.15-3.23 1.67-4.77 4.92-4.92 1.27-.06 1.65-.07 4.85-.07zM12 0C8.74 0 8.33.01 7.05.07 2.7.27.27 2.69.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.2 4.36 2.62 6.78 6.98 6.98C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c4.35-.2 6.78-2.62 6.98-6.98.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.2-4.35-2.62-6.78-6.97-6.98C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm6.41-10.86a1.44 1.44 0 1 1-1.44-1.44 1.44 1.44 0 0 1 1.44 1.44z"/></svg> Instagram</a>
+        <a class="connect-btn" href="https://x.com/home"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> Twitter</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="logo"><div class="logo-mark"><img src="logo.png" alt="Nagendra Logo" /></div>NAGENDRA</div>
+    <ul class="f-links">
+      <li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li><li><a href="#contact">Contact</a></li>
+    </ul>
+    <p>© 2026 Nagendra Varma. Made with ❤️ and HTML/CSS/JS.</p>
+    <div class="ai-chat-widget" id="aiChatWidget">
+  <div class="ai-fab-particles" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  <button class="ai-fab" id="aiChatToggle" aria-label="Chat with Nagendra AI">
+    <span class="ai-fab-ring"></span>
+    <span class="ai-fab-burst"></span>
+    <svg class="ai-fab-robot" viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="45" cy="9" r="3" class="ai-fab-antenna-tip"/>
+      <line x1="45" y1="12" x2="45" y2="21" class="ai-fab-antenna-stem"/>
+      <rect class="ai-fab-arm ai-fab-arm-l" x="8" y="48" width="10" height="20" rx="5"/>
+      <rect class="ai-fab-arm ai-fab-arm-r" x="72" y="48" width="10" height="20" rx="5"/>
+      <rect x="24" y="62" width="42" height="18" rx="9" class="ai-fab-body"/>
+      <rect x="15" y="21" width="60" height="42" rx="18" class="ai-fab-head"/>
+      <rect x="15" y="21" width="60" height="42" rx="18" class="ai-fab-head-outline"/>
+      <g class="ai-fab-eyes">
+        <ellipse cx="33" cy="43" rx="5.2" ry="6.6" class="ai-eye"/>
+        <circle cx="33" cy="41" r="2.3" class="ai-pupil"/>
+        <ellipse cx="57" cy="43" rx="5.2" ry="6.6" class="ai-eye"/>
+        <circle cx="57" cy="41" r="2.3" class="ai-pupil"/>
+      </g>
+      <path d="M37 53 Q45 58 53 53" class="ai-fab-mouth"/>
+    </svg>
+  </button>
+
+  <div class="ai-chat-panel" id="aiChatPanel">
+    <button class="ai-chat-close" id="aiChatClose" aria-label="Close chat"><svg data-lucide="x"></svg></button>
+    <div class="ai-chat-header">
+      <div class="ai-chat-header-info">
+        <div class="ai-chat-avatar">
+          <svg class="ai-robot-icon" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="6" r="2" fill="#00E5FF"/>
+            <line x1="20" y1="8" x2="20" y2="12" stroke="#00E5FF" stroke-width="2"/>
+            <rect x="1" y="20" width="4" height="8" rx="2" fill="#EDF1F7"/>
+            <rect x="35" y="20" width="4" height="8" rx="2" fill="#EDF1F7"/>
+            <rect x="6" y="12" width="28" height="22" rx="10" fill="#EDF1F7"/>
+            <rect x="6" y="12" width="28" height="22" rx="10" fill="none" stroke="#00E5FF" stroke-width="1.4" opacity=".55"/>
+            <circle cx="15" cy="23" r="3" fill="#0B0F1E"/>
+            <circle cx="15" cy="23" r="1.4" fill="#00E5FF"/>
+            <circle cx="25" cy="23" r="3" fill="#0B0F1E"/>
+            <circle cx="25" cy="23" r="1.4" fill="#00E5FF"/>
+          </svg>
+        </div>
+        <div><h4>Nagendra AI</h4><span class="ai-chat-status"><span class="ai-status-dot"></span>Online</span></div>
+      </div>
+    </div>
+
+    <div class="ai-chat-hero" id="aiChatHero">
+      <div class="ai-hero-robot" id="aiHeroRobot" aria-hidden="true">
+        <svg viewBox="0 0 170 200" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="82" cy="14" r="4" class="ai-hero-antenna-tip"/>
+          <line x1="82" y1="18" x2="82" y2="32" class="ai-hero-antenna-stem"/>
+          <rect x="30" y="32" width="104" height="72" rx="30" class="ai-fab-head"/>
+          <rect x="30" y="32" width="104" height="72" rx="30" class="ai-fab-head-outline"/>
+          <g class="ai-fab-eyes">
+            <ellipse cx="58" cy="70" rx="9" ry="11.5" class="ai-eye"/>
+            <circle cx="58" cy="66" r="4" class="ai-pupil"/>
+            <ellipse cx="106" cy="70" rx="9" ry="11.5" class="ai-eye"/>
+            <circle cx="106" cy="66" r="4" class="ai-pupil"/>
+          </g>
+          <path d="M65 89 Q82 99 99 89" class="ai-fab-mouth"/>
+          <rect x="46" y="108" width="76" height="34" rx="17" class="ai-fab-body"/>
+          <rect class="ai-hero-arm-l" x="14" y="118" width="18" height="36" rx="9"/>
+          <g class="ai-hero-arm-r-group">
+            <rect class="ai-hero-arm-r" x="128" y="112" width="18" height="36" rx="9"/>
+          </g>
+        </svg>
+      </div>
+      <div class="ai-hero-bubble" id="aiHeroBubble">
+        <p>👋 Hello! I'm <b>Nagendra AI</b> — your personal AI assistant. How can I help you today?</p>
+      </div>
+    </div>
+
+    <div class="ai-chat-messages" id="aiChatMessages"></div>
+
+    <div class="ai-typing-row" id="aiTypingRow">
+      <div class="ai-typing-dots"><span></span><span></span><span></span></div>
+      <span class="ai-typing-label">Nagendra AI is typing…</span>
+    </div>
+
+    <div class="ai-chat-quick" id="aiChatQuick"></div>
+
+    <form class="ai-chat-input-row" id="aiChatForm">
+      <input type="text" id="aiChatInput" placeholder="Ask me anything..." autocomplete="off" />
+      <button type="submit" class="ai-send" aria-label="Send"><svg data-lucide="send"></svg></button>
+    </form>
+  </div>
+</div>
+    <a href="#home" class="back-top" aria-label="Back to top"><svg data-lucide="arrow-up"></svg></a>
+</footer>
+
+  <div class="cert-lightbox" id="certLightbox">
+    <div class="cert-lightbox-backdrop" id="certLightboxBackdrop"></div>
+    <div class="cert-lightbox-inner" id="certLightboxInner">
+      <button class="cert-lightbox-close" id="certLightboxClose" aria-label="Close"><svg data-lucide="x"></svg></button>
+      <img class="cert-lightbox-img" id="certLightboxImg" src="" alt="Certificate enlarged view">
+      <div class="cert-lightbox-caption" id="certLightboxCaption"></div>
+    </div>
+  </div>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script>if (window.lucide) lucide.createIcons();</script>
+<script src="js/cursor.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/128/three.min.js"></script>
+<script src="js/background.js"></script>
+<script src="js/hero.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/projects-showcase.js"></script>
+<script src="js/chatbot.js"></script>
+<script src="js/cert-lightbox.js"></script>
+</body>
+</html>
