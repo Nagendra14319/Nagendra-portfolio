@@ -1516,3 +1516,14 @@ a.contact-line:hover .c-icon-whatsapp{background:var(--cyan) !important;color:#0
     z-index:99999 !important;
   }
 }
+/* Fix: .ai-chat-widget's will-change:transform creates a containing
+   block that traps .ai-chat-panel's position:fixed inside a tiny box
+   (the robot button's own size) instead of the full viewport. Disable
+   will-change specifically on mobile, where the panel needs to size
+   against the real screen. */
+@media (max-width:640px){
+  .ai-chat-widget{
+    will-change:auto !important;
+    transform:none !important;
+  }
+}
