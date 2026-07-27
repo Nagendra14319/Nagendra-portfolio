@@ -32,11 +32,11 @@
       name: "His full name is Appala Nagendra Varma.",
       role: "He's a final-year Computer Science Engineering student, and a Data Analyst & Full Stack Developer, specializing in AI, Machine Learning, and modern software development.",
 
-      phone: "You can call or text him at +91 8885519886.",
-      whatsapp: "You can message him directly on WhatsApp: https://wa.me/918885519886",
-      email: "His email is nagendravarma1315@gmail.com — feel free to reach out anytime.",
+      phone: 'You can call or text him at <a href="tel:+918885519886" target="_blank" rel="noopener">+91 8885519886</a>.',
+      whatsapp: 'You can message him directly here: <a href="https://wa.me/918885519886" target="_blank" rel="noopener">Chat on WhatsApp</a>',
+      email: 'His email is <a href="mailto:nagendravarma1315@gmail.com" target="_blank" rel="noopener">nagendravarma1315@gmail.com</a> — feel free to reach out anytime.',
       location: "He's based in India, Andhra Pradesh.",
-      contact: "Here's how to reach Nagendra:\n📞 Phone: +91 8885519886\n💬 WhatsApp: https://wa.me/918885519886\n✉️ Email: nagendravarma1315@gmail.com\n📍 Location: India, Andhra Pradesh\n\nYou'll also find GitHub, LinkedIn, Instagram and Twitter links in the Contact section below.",
+      contact: 'Here\'s how to reach Nagendra:\n📞 Phone: <a href="tel:+918885519886" target="_blank" rel="noopener">+91 8885519886</a>\n💬 <a href="https://wa.me/918885519886" target="_blank" rel="noopener">Chat on WhatsApp</a>\n✉️ Email: <a href="mailto:nagendravarma1315@gmail.com" target="_blank" rel="noopener">nagendravarma1315@gmail.com</a>\n📍 Location: India, Andhra Pradesh\n\nYou\'ll also find GitHub, LinkedIn, Instagram and Twitter links in the Contact section below.',
 
       github: "GitHub: https://github.com/Nagendra14319",
       linkedin: "LinkedIn: https://www.linkedin.com/in/appala-nagendra-varma-25bbb9318",
