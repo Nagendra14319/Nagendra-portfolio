@@ -333,6 +333,15 @@
     const showcase = document.getElementById('pwShowcase');
     const sidebarWrap = document.querySelector('.pw-sidebar-wrap');
     if (!showcase || !sidebarWrap) return;
+    // Below the tablet/mobile breakpoint, CSS switches the whole
+    // showcase to height:auto with a stacked layout — clear any
+    // leftover inline height instead of forcing a desktop-measured
+    // value, otherwise the inline style clips the image/details/
+    // buttons on mobile.
+    if (window.innerWidth <= 1080) {
+      showcase.style.height = '';
+      return;
+    }
     showcase.style.height = 'auto';
     const naturalHeight = sidebarWrap.scrollHeight;
     showcase.style.height = naturalHeight + 'px';
@@ -345,7 +354,6 @@
   });
   let pwResizeTimer = null;
   window.addEventListener('resize', () => {
-    if (window.innerWidth <= 1080) return;
     clearTimeout(pwResizeTimer);
     pwResizeTimer = setTimeout(pwLockHeightToSidebar, 150);
   }, { passive: true });
