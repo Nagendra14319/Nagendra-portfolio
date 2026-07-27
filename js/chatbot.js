@@ -22,27 +22,78 @@
     if (window.nagendraChatbotInitialized) return;
     window.nagendraChatbotInitialized = true;
 
-    // Knowledge Base
+    // Knowledge Base — granular, specific answers so any single detail
+    // (phone, email, location, a specific project, a specific internship,
+    // a specific certificate, etc.) gets a precise, complete answer
+    // instead of a vague catch-all category reply.
     const KB = {
-      greeting: "👋 Hey! I'm Nagendra AI. Ask me about his skills, projects, experience, or how to get in touch.",
-      skills: "Nagendra works mainly with Python, JavaScript, React, Next.js, FastAPI, Node.js, TensorFlow, MongoDB and SQL. He's also comfortable with Git, Docker and AWS.",
-      projects: "Some featured projects: an AI Chatbot Assistant (Python, FastAPI, OpenAI), this Portfolio Website (Next.js, Tailwind, Framer Motion), a full-stack Task Manager App (React, Node.js, MongoDB), and an ML Disease Predictor (Python, scikit-learn).",
-      experience: "He's interned as a Generative AI Intern at Nivuna Labs, a Web Development Intern at InLighnX Global, and a Python Developer Intern at CodTech.",
-      education: "He's currently pursuing a B.Tech in CSE (2022–2026).",
-      contact: "You can reach Nagendra at nagendravarma1315@gmail.com or +91 8885519886. Links to GitHub, LinkedIn and other socials are in the Contact section below.",
-      achievements: "He won 1st place in a State-Level AI & ML Hackathon, participated in Smart India Hackathon 2024, and is part of the Blind Coding Club.",
-      resume: "You can view/download his resume using the 'View Resume' button in the hero section at the top of the page.",
-      fallback: "I'm not totally sure about that one — but feel free to ask about Nagendra's skills, projects, experience, or how to contact him!"
+      greeting: "👋 Hey! I'm Nagendra AI. Ask me anything about Nagendra — skills, projects, experience, education, certifications, achievements, or how to reach him.",
+
+      name: "His full name is Appala Nagendra Varma.",
+      role: "He's a final-year Computer Science Engineering student, and a Data Analyst & Full Stack Developer, specializing in AI, Machine Learning, and modern software development.",
+
+      phone: "You can call or text him at +91 8885519886.",
+      whatsapp: "You can message him directly on WhatsApp: https://wa.me/918885519886",
+      email: "His email is nagendravarma1315@gmail.com — feel free to reach out anytime.",
+      location: "He's based in India, Andhra Pradesh.",
+      contact: "Here's how to reach Nagendra:\n📞 Phone: +91 8885519886\n💬 WhatsApp: https://wa.me/918885519886\n✉️ Email: nagendravarma1315@gmail.com\n📍 Location: India, Andhra Pradesh\n\nYou'll also find GitHub, LinkedIn, Instagram and Twitter links in the Contact section below.",
+
+      github: "GitHub: https://github.com/Nagendra14319",
+      linkedin: "LinkedIn: https://www.linkedin.com/in/appala-nagendra-varma-25bbb9318",
+      socials: "GitHub: https://github.com/Nagendra14319\nLinkedIn: https://www.linkedin.com/in/appala-nagendra-varma-25bbb9318",
+
+      skills: "Nagendra works with: Python, JavaScript, React, Next.js, FastAPI, Node.js, TensorFlow, MongoDB, MySQL, SQL, Tailwind CSS, Git, Docker, and AWS. He's also worked with Gemini AI for building AI-powered applications.",
+
+      education: "🎓 Education:\n• B.Tech, Computer Science & Engineering — Swarnandhra College of Engineering & Technology, Narsapur (2022–2026), CGPA 8.10\n• Intermediate, Computer Science — SVKP & PV Junior College (2020–2022), GPA 9.33\n• Secondary School Certificate — Bhashyam High School (2019–2020), GPA 9.99",
+
+      experience: "💼 Internship experience:\n1. Generative AI Intern — Nivuna Labs (Sep 2025 – Mar 2026): built ML models and worked on real-world AI applications.\n2. Web Development Intern — InLighnX Global Pvt Ltd (Oct 2023 – Nov 2023): developed responsive web apps in a team setting.\n3. Python Developer Intern — CodTech (Aug 2023 – Sep 2023): worked on Python projects and automation scripts.",
+
+      project_smart_city: "🏙️ Smart City Assistant — an AI-powered smart city platform with predictive analytics, voice assistance, and an interactive dashboard, built with Python, FastAPI, Streamlit, Google Gemini AI, and Scikit-learn.",
+      project_water: "💧 Smart Water Analytics — an AI-powered water quality monitoring system with real-time analysis, visualization, and automated reporting, built with Python, Pandas, Streamlit, NumPy, and Matplotlib.",
+      project_spamshield: "🛡️ SpamShield AI — an AI-powered email spam detection system using NLP and Machine Learning to classify messages, built with Python, Scikit-learn, NLP, Streamlit, and Pandas.",
+      project_intellisql: "🗄️ IntelliSQL — an AI-powered SQL Query Assistant that converts natural language into SQL queries and runs them in real time, built with Python, Streamlit, SQLite, and Google Gemini AI.",
+      projects: "🚀 Featured projects:\n1. Smart City Assistant — AI-powered smart city platform with predictive analytics\n2. Smart Water Analytics — water quality monitoring & reporting system\n3. SpamShield AI — NLP-based email spam classifier\n4. IntelliSQL — natural language to SQL query assistant\n\nAsk me about any one by name for more detail!",
+
+      achievements: "🏆 Achievements:\n• 1st place — State-Level AI & Machine Learning Hackathon\n• Participant — Smart India Hackathon 2024\n• Member — Blind Coding Club (building by heart, not by sight)\n• Active NSS Volunteer\n• Chess player and problem solver",
+
+      certificates: "📜 He holds 15+ certifications, including Python Programming (Infosys Springboard), Ethical Hacking (Eduskills), Data Structures (Great Learning), Fundamentals of Cybersecurity (Zscaler), Full Stack Developer (GrowthLink), Introduction to Generative AI (IBM), Solutions Architecture Job Simulation (AWS), and more — see the full list in the Certificates section.",
+
+      resume: "You can view or download his resume using the 'View Resume' button in the hero section at the top of the page.",
+
+      availability: "He's currently available for internships and full-time roles — feel free to reach out via email, phone, or WhatsApp!",
+
+      fallback: "I'm not totally sure about that one — try asking about his skills, a specific project, his experience, education, certifications, achievements, or how to contact him (email, phone, WhatsApp)."
     };
 
+    // Rule order matters: more specific patterns are checked first,
+    // so "mobile number" or "phone number" match precisely instead of
+    // falling into the broad "contact" rule below them.
     const RULES = [
-      { keys: ['skill', 'tech', 'stack', 'language', 'technolog'], reply: KB.skills },
-      { keys: ['project', 'work', 'built', 'portfolio site', 'app'], reply: KB.projects },
-      { keys: ['experience', 'intern', 'job', 'work history', 'career'], reply: KB.experience },
-      { keys: ['education', 'college', 'degree', 'study', 'b.tech', 'btech'], reply: KB.education },
-      { keys: ['contact', 'email', 'phone', 'reach', 'hire', 'connect'], reply: KB.contact },
-      { keys: ['achieve', 'award', 'hackathon', 'win', 'certif'], reply: KB.achievements },
+      { keys: ['whatsapp', 'wa.me'], reply: KB.whatsapp },
+      { keys: ['mobile number', 'mobile no', 'phone number', 'phone no', 'contact number', 'call him', 'his number', 'your number', ' mobile', ' phone'], reply: KB.phone },
+      { keys: ['email', 'e-mail', 'mail id', 'gmail'], reply: KB.email },
+      { keys: ['location', 'where is he', 'where does he live', 'based in', 'address', 'city', 'state'], reply: KB.location },
+      { keys: ['github'], reply: KB.github },
+      { keys: ['linkedin'], reply: KB.linkedin },
+      { keys: ['social', 'socials'], reply: KB.socials },
+      { keys: ['contact', 'reach', 'hire', 'connect', 'get in touch'], reply: KB.contact },
+
+      { keys: ['name', 'who are you', 'who is he', 'who is nagendra'], reply: KB.name },
+      { keys: ['role', 'what does he do', 'what is he', 'about him', 'about nagendra'], reply: KB.role },
+
+      { keys: ['smart city'], reply: KB.project_smart_city },
+      { keys: ['water', 'water analytics', 'water quality'], reply: KB.project_water },
+      { keys: ['spamshield', 'spam shield', 'spam detect'], reply: KB.project_spamshield },
+      { keys: ['intellisql', 'intelli sql', 'sql assistant'], reply: KB.project_intellisql },
+      { keys: ['project', 'work', 'built', 'app', 'showcase'], reply: KB.projects },
+
+      { keys: ['skill', 'tech stack', 'technology', 'technologies', 'language', 'stack'], reply: KB.skills },
+      { keys: ['education', 'college', 'degree', 'study', 'studies', 'b.tech', 'btech', 'school', 'cgpa', 'gpa'], reply: KB.education },
+      { keys: ['experience', 'intern', 'job', 'work history', 'career', 'nivuna', 'inlighnx', 'codtech'], reply: KB.experience },
+      { keys: ['achieve', 'award', 'hackathon', 'win', 'nss', 'chess'], reply: KB.achievements },
+      { keys: ['certif', 'certificate', 'certification'], reply: KB.certificates },
       { keys: ['resume', 'cv'], reply: KB.resume },
+      { keys: ['available', 'availability', 'open to work', 'hiring', 'freelance'], reply: KB.availability },
       { keys: ['hi', 'hello', 'hey', 'yo'], reply: KB.greeting },
     ];
 
@@ -93,7 +144,7 @@
               <circle cx="25" cy="23" r="1.4" fill="#00E5FF"/>
             </svg>
           </div>
-          <div class="ai-msg ai-msg-bot">${text}</div>
+          <div class="ai-msg ai-msg-bot">${text.replace(/\n/g, '<br>')}</div>
         `;
         messages.appendChild(row);
       } else {
@@ -211,10 +262,18 @@
       openPanel();
     }
 
-    toggleBtn.addEventListener('mouseenter', scheduleHoverOpen);
-    toggleBtn.addEventListener('mouseleave', scheduleHoverClose);
-    panel.addEventListener('mouseenter', scheduleHoverOpen);
-    panel.addEventListener('mouseleave', scheduleHoverClose);
+    // Hover-to-open/close is a desktop-only convenience — on touch
+    // devices, tapping fires synthetic mouseenter then mouseleave in
+    // quick succession (as the finger lifts), which was closing the
+    // panel immediately after the tap opened it. Detect touch support
+    // and skip attaching hover listeners entirely in that case.
+    const isTouchDevice = window.matchMedia('(hover: none), (pointer: coarse)').matches;
+    if (!isTouchDevice) {
+      toggleBtn.addEventListener('mouseenter', scheduleHoverOpen);
+      toggleBtn.addEventListener('mouseleave', scheduleHoverClose);
+      panel.addEventListener('mouseenter', scheduleHoverOpen);
+      panel.addEventListener('mouseleave', scheduleHoverClose);
+    }
 
     // If focus leaves the input (e.g. user clicks elsewhere), re-check hover state
     input.addEventListener('blur', () => {

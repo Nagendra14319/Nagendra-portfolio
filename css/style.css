@@ -1440,3 +1440,79 @@ a.contact-line:hover .c-icon-whatsapp{background:var(--cyan) !important;color:#0
   .ai-chat-input-row{padding:12px;}
   .ai-chat-input-row input{font-size:13px;}
 }
+/* Mobile Projects sidebar fix: the desktop .pw-item rule sets
+   width:100% (for the rectangle-shape look), which was stretching
+   each project item to fill the whole scroll container on mobile,
+   hiding all but one project. Reset it back to natural sizing here. */
+@media (max-width:1080px){
+  .pw-item{width:auto;flex:0 0 auto;min-width:180px;}
+}
+/* Mobile Projects sidebar: switch from horizontal scroll to the same
+   vertical windowed carousel used on desktop, since the JS navigation
+   (touch swipe, wheel, arrow buttons) is built for vertical motion. */
+@media (max-width:1080px){
+  .pw-sidebar{overflow-x:hidden;overflow-y:hidden;padding-bottom:0;}
+  .pw-sidebar-track{flex-direction:column;gap:4px;}
+  .pw-item{width:100%;flex:0 0 auto;min-width:0;}
+  .pw-nav-btn{display:flex;}
+}
+/* Tighten sidebar item spacing: pin name to the left edge and the
+   status dot to the right edge, removing excess side gaps. */
+.pw-item{
+  grid-template-columns:1fr auto;
+  column-gap:10px;
+  padding-left:12px;
+  padding-right:12px;
+}
+.pw-item-info{align-items:flex-start;}
+.pw-item-dot{justify-self:end;margin-left:0;}
+
+@media (max-width:1080px){
+  .pw-item{padding-left:14px;padding-right:14px;}
+}
+/* ---- FINAL mobile chatbot panel override (guaranteed to win) ---- */
+@media (max-width:640px){
+  .ai-chat-panel{
+    position:fixed !important;
+    left:0 !important;right:0 !important;bottom:0 !important;top:auto !important;
+    width:100% !important;max-width:100% !important;
+    height:85vh !important;max-height:85vh !important;
+    border-radius:26px 26px 0 0 !important;
+    transform-origin:bottom center;
+    z-index:99999 !important;
+  }
+  .ai-chat-widget{
+    right:18px !important;bottom:18px !important;
+    z-index:99999 !important;
+  }
+}
+@media (max-width:640px){
+  .ai-chat-panel{
+    position:fixed !important;
+    left:0 !important;right:0 !important;bottom:0 !important;top:auto !important;
+    width:100% !important;max-width:100% !important;
+    height:85vh !important;max-height:85vh !important;
+    border-radius:26px 26px 0 0 !important;
+    transform-origin:bottom center;
+    z-index:99999 !important;
+  }
+  .ai-chat-widget{
+    right:18px !important;bottom:18px !important;
+    z-index:99999 !important;
+  }
+}
+@media (max-width:640px){
+  .ai-chat-panel{
+    position:fixed !important;
+    left:0 !important;
+    right:0 !important;
+    bottom:0 !important;
+    top:auto !important;
+    width:100% !important;
+    max-width:100% !important;
+    height:85vh !important;
+    max-height:85vh !important;
+    border-radius:26px 26px 0 0 !important;
+    z-index:99999 !important;
+  }
+}
