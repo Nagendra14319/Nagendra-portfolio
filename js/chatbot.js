@@ -36,7 +36,7 @@
       whatsapp: 'You can message him directly here: <a href="https://wa.me/918885519886" target="_blank" rel="noopener">Chat on WhatsApp</a>',
       email: 'His email is <a href="mailto:nagendravarma1315@gmail.com" target="_blank" rel="noopener">nagendravarma1315@gmail.com</a> — feel free to reach out anytime.',
       location: "He's based in India, Andhra Pradesh.",
-      contact: 'Here\'s how to reach Nagendra:\n📞 Phone: <a href="tel:+918885519886" target="_blank" rel="noopener">+91 8885519886</a>\n💬 <a href="https://wa.me/918885519886" target="_blank" rel="noopener">Chat on WhatsApp</a>\n✉️ Email: <a href="mailto:nagendravarma1315@gmail.com" target="_blank" rel="noopener">nagendravarma1315@gmail.com</a>\n📍 Location: India, Andhra Pradesh\n\nYou\'ll also find GitHub, LinkedIn, Instagram and Twitter links in the Contact section below.',
+      contact: 'Here\'s how to reach Nagendra:\n• Phone: <a href="tel:+918885519886" target="_blank" rel="noopener">+91 8885519886</a>.\n• WhatsApp: <a href="https://wa.me/918885519886" target="_blank" rel="noopener">Chat on WhatsApp</a>.\n• Email: <a href="mailto:nagendravarma1315@gmail.com" target="_blank" rel="noopener">nagendravarma1315@gmail.com</a>.\n• Location: India, Andhra Pradesh.\n\nYou\'ll also find GitHub, LinkedIn, Instagram and Twitter links in the Contact section below.',
 
       github: "GitHub: https://github.com/Nagendra14319",
       linkedin: "LinkedIn: https://www.linkedin.com/in/appala-nagendra-varma-25bbb9318",
@@ -44,17 +44,17 @@
 
       skills: "Nagendra works with: Python, JavaScript, React, Next.js, FastAPI, Node.js, TensorFlow, MongoDB, MySQL, SQL, Tailwind CSS, Git, Docker, and AWS. He's also worked with Gemini AI for building AI-powered applications.",
 
-      education: "🎓 Education:\n• B.Tech, Computer Science & Engineering — Swarnandhra College of Engineering & Technology, Narsapur (2022–2026), CGPA 8.10\n• Intermediate, Computer Science — SVKP & PV Junior College (2020–2022), GPA 9.33\n• Secondary School Certificate — Bhashyam High School (2019–2020), GPA 9.99",
+      education: "🎓 Education:\n• B.Tech, Computer Science & Engineering — Swarnandhra College of Engineering & Technology, Narsapur (2022–2026), CGPA 8.10.\n• Intermediate, Computer Science — SVKP & PV Junior College (2020–2022), GPA 9.33.\n• Secondary School Certificate — Bhashyam High School (2019–2020), GPA 9.99.",
 
-      experience: "💼 Internship experience:\n1. Generative AI Intern — Nivuna Labs (Sep 2025 – Mar 2026): built ML models and worked on real-world AI applications.\n2. Web Development Intern — InLighnX Global Pvt Ltd (Oct 2023 – Nov 2023): developed responsive web apps in a team setting.\n3. Python Developer Intern — CodTech (Aug 2023 – Sep 2023): worked on Python projects and automation scripts.",
+      experience: "💼 Internship Experience:\n• Generative AI Intern — Nivuna Labs (Sep 2025 – Mar 2026): built ML models and worked on real-world AI applications.\n• Web Development Intern — InLighnX Global Pvt Ltd (Oct 2023 – Nov 2023): developed responsive web apps in a team setting.\n• Python Developer Intern — CodTech (Aug 2023 – Sep 2023): worked on Python projects and automation scripts.",
 
       project_smart_city: "🏙️ Smart City Assistant — an AI-powered smart city platform with predictive analytics, voice assistance, and an interactive dashboard, built with Python, FastAPI, Streamlit, Google Gemini AI, and Scikit-learn.",
       project_water: "💧 Smart Water Analytics — an AI-powered water quality monitoring system with real-time analysis, visualization, and automated reporting, built with Python, Pandas, Streamlit, NumPy, and Matplotlib.",
       project_spamshield: "🛡️ SpamShield AI — an AI-powered email spam detection system using NLP and Machine Learning to classify messages, built with Python, Scikit-learn, NLP, Streamlit, and Pandas.",
       project_intellisql: "🗄️ IntelliSQL — an AI-powered SQL Query Assistant that converts natural language into SQL queries and runs them in real time, built with Python, Streamlit, SQLite, and Google Gemini AI.",
-      projects: "🚀 Featured projects:\n1. Smart City Assistant — AI-powered smart city platform with predictive analytics\n2. Smart Water Analytics — water quality monitoring & reporting system\n3. SpamShield AI — NLP-based email spam classifier\n4. IntelliSQL — natural language to SQL query assistant\n\nAsk me about any one by name for more detail!",
+      projects: "🚀 Featured Projects:\n• Smart City Assistant — AI-powered smart city platform with predictive analytics.\n• Smart Water Analytics — water quality monitoring & reporting system.\n• SpamShield AI — NLP-based email spam classifier.\n• IntelliSQL — natural language to SQL query assistant.\n\nAsk me about any one by name for more detail!",
 
-      achievements: "🏆 Achievements:\n• 1st place — State-Level AI & Machine Learning Hackathon\n• Participant — Smart India Hackathon 2024\n• Member — Blind Coding Club (building by heart, not by sight)\n• Active NSS Volunteer\n• Chess player and problem solver",
+      achievements: "🏆 Achievements:\n• 1st place — State-Level AI & Machine Learning Hackathon.\n• Participant — Smart India Hackathon 2024.\n• Member — Blind Coding Club (building by heart, not by sight).\n• Active NSS Volunteer.\n• Chess player and problem solver.",
 
       certificates: "📜 He holds 15+ certifications, including Python Programming (Infosys Springboard), Ethical Hacking (Eduskills), Data Structures (Great Learning), Fundamentals of Cybersecurity (Zscaler), Full Stack Developer (GrowthLink), Introduction to Generative AI (IBM), Solutions Architecture Job Simulation (AWS), and more — see the full list in the Certificates section.",
 
@@ -309,17 +309,28 @@
     if (window.nagendraContactObserverInitialized) return;
     window.nagendraContactObserverInitialized = true;
 
+    // Debounced toggle: waits for scroll position to actually settle near
+    // the boundary before flipping the class, instead of reacting to every
+    // intersection-ratio tick (which flickers left/right during fast scroll).
+    let avoidanceTimer = null;
+    let desiredState = null;
+
+    function applyState(shouldMoveLeft) {
+      if (desiredState === shouldMoveLeft) return;
+      desiredState = shouldMoveLeft;
+      clearTimeout(avoidanceTimer);
+      avoidanceTimer = setTimeout(() => {
+        widget.classList.toggle('move-left', shouldMoveLeft);
+      }, 120);
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            widget.classList.add('move-left');
-          } else {
-            widget.classList.remove('move-left');
-          }
+          applyState(entry.isIntersecting);
         });
       },
-      { threshold: 0.55 } // ~55% visibility, within the requested 50-60% range
+      { threshold: 0.55, rootMargin: '0px 0px -10% 0px' }
     );
 
     observer.observe(contactSection);
